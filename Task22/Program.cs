@@ -10,7 +10,7 @@ void FindSquared(int num)
     int count =1;
     while (count<=num) 
     {
-        Console.WriteLine($"{count}|{count*count}");
+        Console.WriteLine($"| {count} |  {count*count  , 2} |");
         count++;
     }
 }
