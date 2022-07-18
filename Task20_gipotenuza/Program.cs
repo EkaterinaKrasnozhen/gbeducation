@@ -23,4 +23,4 @@ double S_a_b(int x1, int y1, int x2, int y2)
     return s;
 }
 double result = S_a_b(ax1,ay1,bx2,by2);
-Console.WriteLine (Math.Round(result,3));
+Console.WriteLine (Math.Round(result,2, MidpointRounding.ToZero));
