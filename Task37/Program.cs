@@ -16,13 +16,28 @@ int[] CreateArrayRndInt(int size, int min, int max)
 }
 int[] MultiArrayElem(int[] array)
 {
-    int[] newArray = new int[array.Length / 2];
-    for (int i = 0; i < array.Length / 2; i++)
+    if (array.Length % 2 == 0)
     {
-        newArray[i] = array[i] * array[array.Length - 1 - i];
+        int[] newArray = new int[array.Length / 2];
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            newArray[i] = array[i] * array[array.Length - 1 - i];
 
+        }
+        return newArray;
     }
-    return newArray;
+    else
+    {
+        int[] newArray = new int[array.Length / 2 + 1];
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            newArray[i] = array[i] * array[array.Length - 1 - i];
+
+        }
+        newArray[newArray.Length-1] = array[array.Length/2];
+        return newArray;
+    }
+
 }
 
 void PrintArray(int[] num)
@@ -32,15 +47,8 @@ void PrintArray(int[] num)
         if (i < num.Length) Console.Write(num[i] + " ");
     }
 }
-int[] array = CreateArrayRndInt(3, 1, 5);
-int middle = array.Length / 2;
-
+int[] array = CreateArrayRndInt(7, 1, 5);
 PrintArray(array);
 int[] count = MultiArrayElem(array);
-Console.Write("->");
-if (array.Length % 2 == 0) PrintArray(count);
-else
-{
-    PrintArray(count);
-    Console.WriteLine($"{array[middle]}");
-}
+Console.Write("-> ");
+PrintArray(count);
