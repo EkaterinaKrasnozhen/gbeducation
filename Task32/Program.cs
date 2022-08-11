@@ -13,13 +13,12 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-int[] ChangeNegPos(int[] array)
+void ChangeNegPos(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = array[i]*-1;
     }
-    return array;
 }
 void PrintArray(int [] numbers) 
 {
@@ -32,6 +31,6 @@ void PrintArray(int [] numbers)
 }
 int [] array = CreateArrayRndInt(4,-4,8);
 PrintArray(array);
-int [] arrayChanged = ChangeNegPos(array);
+ChangeNegPos(array);
 Console.Write("->");
-PrintArray(arrayChanged);
+PrintArray(array);
