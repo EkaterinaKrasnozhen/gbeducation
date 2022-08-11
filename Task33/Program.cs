@@ -24,18 +24,23 @@ void PrintArray(int[] numbers)
 }
 Console.WriteLine("Введите число: ");
 int findNum = Convert.ToInt32(Console.ReadLine());
-void FindNum(int[] array, int search)
+int FindNum(int[] array, int search)
 {
+    int position = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] == search)
         {
-            Console.Write("-> да");
-            return;
+            position = 1;
+            break;
         }
+        
+        else position = -1;
     }
-    Console.WriteLine("-> нет");
+    return position;
 }
 int[] array = CreateArrayRndInt(4, 1, 3);
 PrintArray(array);
-FindNum(array, findNum);
+int result = FindNum(array, findNum);
+if (result == 1) Console.WriteLine("-> да");
+else Console.WriteLine("-> нет");
