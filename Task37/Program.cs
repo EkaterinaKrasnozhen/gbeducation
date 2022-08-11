@@ -14,44 +14,33 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-int [] MultiArrayElem(int[] array)
+int[] MultiArrayElem(int[] array)
 {
-    int[] newArray = new int[array.Length/2];
-    //int index = 1;
-    //int findLength = array.Length / 2;
-    //int middle = findLength;
-    int half = array.Length%2;
-        
-        if (half == 0)
-        {
-            for (int i = 0; i < array.Length/2; i++) 
-            {
-            newArray [i]= array[i] * array[array.Length - 1-i];
-            
-            }
-            
-
-        }
-        return newArray;
-        //if (half == 1)
-        //{
-           // array[i] = array[i] * array[array.Length/2 - index];
-           // index++;
-            
-            //arrayNew[i] = array[findLength+index]*array [array.Length/2+index];
-        //}
-    
-}
-void PrintArray(int [] numbers) 
-{
-    for (int i = 0; i < numbers.Length; i++)
+    int[] newArray = new int[array.Length / 2];
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        if (i == 0) Console.Write ("[");
-        if (i < numbers.Length-1) Console.Write (numbers[i] + ",");
-        else  Console.Write (numbers [i] + "]");
+        newArray[i] = array[i] * array[array.Length - 1 - i];
+
+    }
+    return newArray;
+}
+
+void PrintArray(int[] num)
+{
+    for (int i = 0; i < num.Length; i++)
+    {
+        if (i < num.Length) Console.Write(num[i] + " ");
     }
 }
-int [] array = CreateArrayRndInt(4,1,5);
+int[] array = CreateArrayRndInt(3, 1, 5);
+int middle = array.Length / 2;
+
 PrintArray(array);
-int [] count = MultiArrayElem(array);
-PrintArray(count);
+int[] count = MultiArrayElem(array);
+Console.Write("->");
+if (array.Length % 2 == 0) PrintArray(count);
+else
+{
+    PrintArray(count);
+    Console.WriteLine($"{array[middle]}");
+}
