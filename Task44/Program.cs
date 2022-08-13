@@ -5,25 +5,21 @@
 Если N = 7 -> 0 1 1 2 3 5 8 */
 Console.WriteLine("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-int[] FibNum(int n)
+void FibNum(int n)
 
 {
-    int[] fib = new int[n];
-    int i = 2;
-    fib[i - 2] = 0;
-    fib[i - 1] = 1;
-    for (i = 2; i < n; i++)
+    
+    int fib0 = 0;
+    int fib1 = 1;
+    int fibn = 0;
+    Console.Write($"{fib0} {fib1} ");
+    for (int i = 0; i < n; i++)
     {
-        fib[i] = fib[i - 1] + fib[i - 2];
+        fibn = fib0+fib1;
+        Console.Write($" {fibn} ");
+        fib0=fib1;
+        fib1=fibn;
     }
-    return fib;
+    
 }
-int[] result = FibNum(num);
-void PrintArray(int[] numbers)
-{
-    for (int i = 0; i < numbers.Length; i++)
-    {
-        if (i < numbers.Length) Console.Write(numbers[i] + " ");
-    }
-}
-PrintArray(result);
+FibNum(num);
