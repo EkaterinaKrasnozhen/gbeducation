@@ -10,12 +10,12 @@ Console.WriteLine("Введите число B: ");
 int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число C: ");
 int c = Convert.ToInt32(Console.ReadLine());
-int Triangle(int i, int j, int m) 
+bool Triangle(int i, int j, int m) 
 {
-    if (i<j+m && j<i+m && m<i+j) return 1;
-    else return 0;
+    if (i<j+m && j<i+m && m<i+j) return true;
+    else return false;
 }
-int result = Triangle(a,b,c);
-Console.WriteLine($"Треугольник со сторонами А,В,С");
-if (result == 1) Console.WriteLine($"может существовать");
-else Console.WriteLine($"не может существовать");
+if (Triangle(a,b,c))
+Console.WriteLine($"Треугольник со сторонами А,В,С может существовать" );
+else 
+Console.WriteLine ($"Треугольник со сторонами А,В,С не может существовать" );
