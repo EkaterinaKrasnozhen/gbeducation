@@ -14,7 +14,7 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-int[] MultiArrayElem(int[] array)
+int[] MultiArrayElem (int[] array)
 {
     //if (array.Length % 2 == 0)
     //{
