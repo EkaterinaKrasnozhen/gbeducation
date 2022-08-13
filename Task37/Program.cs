@@ -16,26 +16,33 @@ int[] CreateArrayRndInt(int size, int min, int max)
 }
 int[] MultiArrayElem(int[] array)
 {
-    if (array.Length % 2 == 0)
-    {
-        int[] newArray = new int[array.Length / 2];
-        for (int i = 0; i < array.Length / 2; i++)
-        {
-            newArray[i] = array[i] * array[array.Length - 1 - i];
+    //if (array.Length % 2 == 0)
+    //{
+    // int[] newArray = new int[array.Length / 2];
+    // for (int i = 0; i < array.Length / 2; i++)
+    //  {
+    //      newArray[i] = array[i] * array[array.Length - 1 - i];
 
-        }
-        return newArray;
-    }
-    else
+    //   }
+    //  return newArray;
+    //  }
+    if (array.Length % 2 == 1)
     {
         int[] newArray = new int[array.Length / 2 + 1];
+        int[] newArraySecond = new int[array.Length / 2];
         for (int i = 0; i < array.Length / 2; i++)
         {
             newArray[i] = array[i] * array[array.Length - 1 - i];
+            newArray[newArray.Length - 1] = array[array.Length / 2];
 
         }
-        newArray[newArray.Length-1] = array[array.Length/2];
-        return newArray;
+        
+        //return newArray;
+        if (array.Length % 2 == 0)
+        {
+            newArraySecond = array[i] * array[array.Length - 1 - i];
+            return newArraySecond;
+        }
     }
 
 }
