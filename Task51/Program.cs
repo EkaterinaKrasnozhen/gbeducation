@@ -29,6 +29,7 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
+
 int SumDiagonal(int[,] matr)
 {
     int sum = 0;
