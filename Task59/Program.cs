@@ -76,7 +76,8 @@ int n =0;
         m++;
     }
     return newNums;
-}
+} 
+
 int[,] res = DelMinimumMatr(startMatr, findMin);
 Console.WriteLine();
 PrintMatrix(res);

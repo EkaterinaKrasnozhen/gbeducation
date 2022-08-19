@@ -20,7 +20,7 @@ void SelectionSort(int [] array)
      }
     int temporary = array[i];
     array [i] = array[minPosition];
-    array[minPosition] = array[i];
+    array[minPosition] = temporary;
    }
 }
 
