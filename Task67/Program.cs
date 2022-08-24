@@ -4,17 +4,16 @@
 45 -> 9 */
 Console.WriteLine("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-int s = 0;
-int SumRecurs(int number, int sum)
+
+int SumRecurs(int number)
 {
-  
-    
-        if (number == 0) return sum;
-    
-         sum+= number%10; 
-        return SumRecurs(number/10, sum);
-        
+    int sum = number % 10;
+
+    if (number >= 1)
+        sum += SumRecurs(number / 10);
+    return sum;
+
 }
 
-int res = SumRecurs(num, s);
+int res = SumRecurs(num);
 Console.Write(res);
