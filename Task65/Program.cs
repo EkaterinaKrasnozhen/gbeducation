@@ -10,6 +10,7 @@ void NaturalNumaber (int number1, int number2) //4,3,2,1 b 0 выход
 if (number1 > number2) return;
 Console.Write($"{number1}");
 NaturalNumaber(++number1,number2);
+
 }
 
 NaturalNumaber(num1,num2);
