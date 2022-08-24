@@ -7,9 +7,22 @@ Console.Write("Введите второе число, больше первог
 int num2 = Convert.ToInt32(Console.ReadLine());
 void NaturalNumaber (int number1, int number2) //4,3,2,1 b 0 выход
 {
-if (number1 > number2) return;
+if (number1 == number2) 
+{
+Console.WriteLine(number1);
+return;
+}
+if (number1 >number2)
+{
 Console.Write($"{number1}");
-NaturalNumaber(++number1,number2);
+NaturalNumaber(number1-1,number2);
+}
+
+else
+{
+Console.Write($"{number1}");
+NaturalNumaber(number1+1,number2);
+}
 
 }
 
