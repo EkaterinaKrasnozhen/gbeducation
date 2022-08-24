@@ -3,17 +3,18 @@
 A = 3; B = 5 -> 243 (3⁵)
 A = 2; B = 3 -> 8 */
 Console.WriteLine("Введите число A: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
+int numb1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число B: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
-int Num1MultNum2(int a, int b) 
+int numb2 = Convert.ToInt32(Console.ReadLine());
+int GetPower(int num1, int num2)
 {
-    int sum = 0;
-if (b>=1) return a;
-a*a;
-Num1MultNum2(a,b-1);
-
-
-return a;
+if (num2 == 0) return 1;
+return GetPower(num1, num2 - 1) * num1;
 }
-int res = Num1MultNum2(num1,num2);
+if (numb2 >= 0)
+{
+int result = GetPower(numb1, numb2);
+Console.WriteLine(result);
+}
+else Console.WriteLine("Степень должна быть натуральна");
+int res = GetPower(numb1, numb2);
